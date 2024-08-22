@@ -29,14 +29,14 @@ const NavBar = () => {
           <Image
             src="/ModeON-DBFF00.webp"
             alt="ModeON Logo"
-            width={200}
+            width={150}
             height={100}
           />
         </div>
 
         {/* DESKTOP NAVBAR */}
         <div className="hidden lg:flex">
-          <ul className="flex items-center gap-6 text-base font-bold uppercase tracking-tight">
+          <ul className="-ml-3 flex items-center gap-6 text-base font-bold uppercase tracking-tight">
             {navLinks.map((link) => (
               <li key={link.name} className="hover:text-white/60">
                 <a href={link.href}>{link.name}</a>

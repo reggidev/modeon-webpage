@@ -1,6 +1,7 @@
-import { CardServices } from "./_components/CardServices"
+import CardServices from "./_components/CardsServices"
 import MainTitle from "./_components/MainTitle"
 import NavBar from "./_components/NavBar"
+import NumberTicker from "./_components/NumberTicker"
 
 export default function Home() {
   return (
@@ -9,17 +10,8 @@ export default function Home() {
         <NavBar />
         <main>
           <MainTitle />
-
-          <div className="flex flex-col items-center justify-center">
-            <h3 className="section-title">Serviços</h3>
-            <p className="section-description">
-              O que oferecemos para sua empresa...
-            </p>
-
-            <div>
-              <CardServices />
-            </div>
-          </div>
+          <CardServices />
+          <NumberTicker />
         </main>
       </div>
     </>

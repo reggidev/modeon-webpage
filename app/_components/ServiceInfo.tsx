@@ -1,6 +1,6 @@
 "use client"
 import { BsMagic } from "react-icons/bs"
-import { HoverEffect } from "../_components/ui/card-hover-effect"
+import { HoverEffect } from "./ui/card-hover-effect"
 import {
   MdOutlineDesignServices,
   MdOutlineSocialDistance,
@@ -8,7 +8,7 @@ import {
 import { BiSolidTrafficCone } from "react-icons/bi"
 import { SiPagespeedinsights, SiSimpleanalytics } from "react-icons/si"
 
-export function CardServices() {
+export function ServiceInfo() {
   return (
     <div className="mx-auto max-w-5xl px-8">
       <HoverEffect items={projects} />

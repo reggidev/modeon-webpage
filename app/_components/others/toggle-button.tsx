@@ -9,7 +9,7 @@ const ToggleButton = () => {
     // Animação para quando a página carrega
     setTimeout(() => {
       setIsOn(true)
-    }, 1000) // Atraso de 1 segundo para a animação
+    }, 1500) // Atraso de 1 segundo para a animação
   }, [])
 
   return (
