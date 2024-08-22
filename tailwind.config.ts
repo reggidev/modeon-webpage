@@ -66,7 +66,7 @@ const config = {
       boxShadow: {
         main_color: "0 0 20px -4px #DBFF00",
         dark_color: "inset 0 0 20px -4px #000",
-        white_color: "inset 0 0 20px -4px #fff",
+        white_color: "inset 0 0 15px -4px #fff",
       },
       borderRadius: {
         lg: "var(--radius)",

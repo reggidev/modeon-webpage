@@ -1,7 +1,7 @@
 import CardServices from "./_components/CardsServices"
+import ContatoSection from "./_components/Contato"
 import MainTitle from "./_components/MainTitle"
 import NavBar from "./_components/NavBar"
-import NumberTicker from "./_components/NumberTicker"
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <main>
           <MainTitle />
           <CardServices />
-          <NumberTicker />
+          <ContatoSection />
         </main>
       </div>
     </>
