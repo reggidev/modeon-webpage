@@ -61,9 +61,21 @@
 
 @layer base {
   * {
-    @apply border-border antialiased scroll-smooth;
+    @apply scroll-smooth border-border antialiased;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .section-title {
+    @apply flex items-center justify-center text-center text-4xl font-bold uppercase tracking-tighter text-white md:text-5xl md:leading-[60px];
+  }
+
+  .section-description {
+    @apply text-center text-[22px] leading-[30px] tracking-tight text-white/80;
+  }
+
+  .section-heading {
+    @apply mx-auto max-w-[800px] px-4;
   }
 }
