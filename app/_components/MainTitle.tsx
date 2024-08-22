@@ -5,7 +5,7 @@ import { WordPullUpDemo } from "./others/word-pull-up"
 const MainTitle = () => {
   return (
     <section className="-mt-20 flex min-h-screen items-center justify-center">
-      <div className="flex flex-col items-center justify-center">
+      <div className="backdrop-blur-s flex flex-col items-center justify-center">
         <WordPullUpDemo />
         <GradualSpacingDemo />
         <ToggleButton />

@@ -1,5 +1,4 @@
 import CardServices from "./_components/CardsServices"
-import ContatoSection from "./_components/Contato"
 import MainTitle from "./_components/MainTitle"
 import NavBar from "./_components/NavBar"
 
@@ -11,7 +10,6 @@ export default function Home() {
         <main>
           <MainTitle />
           <CardServices />
-          <ContatoSection />
         </main>
       </div>
     </>
