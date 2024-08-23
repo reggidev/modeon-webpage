@@ -3,6 +3,7 @@ import WordPullUp from "./magicui/word-pull-up"
 import GradualSpacing from "./magicui/gradual-spacing"
 import { useEffect, useState } from "react"
 import "./styles/toggle-button.css"
+import { RiArrowDownSLine } from "react-icons/ri"
 
 const MainTitle = () => {
   const [isOn, setIsOn] = useState(false)
@@ -36,6 +37,10 @@ const MainTitle = () => {
             <div className={`toggle-button ${isOn ? "on" : "off"}`}>
               <div className="slider bg-gradient-to-r from-[#bbe534] to-[#a6cb2c]" />
             </div>
+          </div>
+
+          <div className="absolute inset-x-0 bottom-4 flex justify-center">
+            <RiArrowDownSLine className="animate-bounce text-5xl text-terciaria" />
           </div>
         </div>
       </div>
