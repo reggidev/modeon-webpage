@@ -1,6 +1,5 @@
 "use client"
 import { BsMagic } from "react-icons/bs"
-import { HoverEffect } from "./ui/card-hover-effect"
 import {
   MdOutlineDesignServices,
   MdOutlineSocialDistance,
@@ -10,39 +9,46 @@ import { SiPagespeedinsights, SiSimpleanalytics } from "react-icons/si"
 import NumberTickerClient from "./others/number-ticker-clients"
 import NumberTickerProjects from "./others/number-ticker-projects"
 import { AnimatedGradientTitle } from "./others/animated-gradient-title"
+import ServicesCards from "./others/card-services"
 
 const projects = [
   {
+    id: 1,
     title: "Identidade Visual",
     description:
       "Criamos uma identidade visual única para destacar sua marca no mercado.",
     icon: BsMagic,
   },
   {
+    id: 2,
     title: "Gestão de Redes Sociais",
     description:
       "Cuidamos de suas redes sociais para engajar seu público e aumentar a presença online.",
     icon: MdOutlineSocialDistance,
   },
   {
+    id: 3,
     title: "Tráfego pago",
     description:
       "Maximizamos seu alcance com campanhas de tráfego pago eficientes e direcionadas",
     icon: BiSolidTrafficCone,
   },
   {
+    id: 4,
     title: "Design de Marca",
     description:
       "Transformamos ideias em uma marca visualmente forte e memorável.",
     icon: MdOutlineDesignServices,
   },
   {
+    id: 5,
     title: "Análise de Desempenho",
     description:
       "Monitoramos e otimizamos suas campanhas para garantir o melhor retorno sobre o investimento.",
     icon: SiSimpleanalytics,
   },
   {
+    id: 6,
     title: "Criação de Sites",
     description:
       "Desenvolvemos sites responsivos e otimizados para uma experiência de usuário excepcional.",
@@ -52,7 +58,7 @@ const projects = [
 
 const CardServices = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-10">
+    <section className="flex flex-col items-center justify-center py-10">
       <AnimatedGradientTitle text="Serviços" />
       <p className="section-description">
         O que oferecemos para sua empresa...
@@ -60,8 +66,15 @@ const CardServices = () => {
 
       {/* SERVICE CARDS */}
       <div>
-        <div className="mx-auto max-w-5xl px-8">
-          <HoverEffect items={projects} />
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 px-8 pb-2 pt-10 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <ServicesCards
+              key={project.id}
+              icon={project.icon}
+              title={project.title}
+              description={project.description}
+            />
+          ))}
         </div>
       </div>
 
@@ -81,7 +94,7 @@ const CardServices = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
