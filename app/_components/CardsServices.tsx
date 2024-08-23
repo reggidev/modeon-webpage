@@ -9,7 +9,8 @@ import { SiPagespeedinsights, SiSimpleanalytics } from "react-icons/si"
 import NumberTickerClient from "./others/number-ticker-clients"
 import NumberTickerProjects from "./others/number-ticker-projects"
 import { AnimatedGradientTitle } from "./others/animated-gradient-title"
-import ServicesCards from "./others/card-services"
+import ServicesCards from "./others/services-cards"
+import Container from "./others/container-animation"
 
 const projects = [
   {
@@ -58,43 +59,42 @@ const projects = [
 
 const CardServices = () => {
   return (
-    <section className="flex flex-col items-center justify-center py-10">
-      <AnimatedGradientTitle text="Serviços" />
-      <p className="section-description">
-        O que oferecemos para sua empresa...
-      </p>
-
-      {/* SERVICE CARDS */}
-      <div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 px-8 pb-2 pt-10 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <ServicesCards
-              key={project.id}
-              icon={project.icon}
-              title={project.title}
-              description={project.description}
-            />
-          ))}
+    <Container>
+      <section className="flex flex-col items-center justify-center py-10">
+        <AnimatedGradientTitle text="Serviços" />
+        <p className="section-description">
+          O que oferecemos para sua empresa...
+        </p>
+        {/* SERVICE CARDS */}
+        <div>
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 px-8 pb-2 pt-10 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project) => (
+              <ServicesCards
+                key={project.id}
+                icon={project.icon}
+                title={project.title}
+                description={project.description}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-
-      {/* NUMBER TICKER */}
-      <div className="flex flex-col items-center justify-center gap-5 md:flex-row">
-        <div className="flex min-w-[350px] max-w-[350px] flex-col items-center justify-center rounded-xl border-[3px] border-solid border-black bg-black py-5 text-white transition-all duration-300 hover:border-white hover:shadow-white_color">
-          <NumberTickerClient />
-          <p className="mt-2 text-xl font-semibold uppercase text-zinc-400 md:text-2xl">
-            Clientes satisfeitos
-          </p>
+        {/* NUMBER TICKER */}
+        <div className="flex flex-col items-center justify-center gap-5 md:flex-row">
+          <div className="flex min-w-[350px] max-w-[350px] flex-col items-center justify-center rounded-xl border-[3px] border-solid border-black bg-black py-5 text-white transition-all duration-300 hover:border-white hover:shadow-white_color">
+            <NumberTickerClient />
+            <p className="mt-2 text-xl font-semibold uppercase text-zinc-400 md:text-2xl">
+              Clientes satisfeitos
+            </p>
+          </div>
+          <div className="flex min-w-[350px] max-w-[350px] flex-col items-center justify-center rounded-xl border-[3px] border-solid border-black bg-black py-5 text-white transition-all duration-300 hover:border-white hover:shadow-white_color">
+            <NumberTickerProjects />
+            <p className="mt-2 text-xl font-semibold uppercase text-zinc-400 md:text-2xl">
+              Projetos entregues
+            </p>
+          </div>
         </div>
-
-        <div className="flex min-w-[350px] max-w-[350px] flex-col items-center justify-center rounded-xl border-[3px] border-solid border-black bg-black py-5 text-white transition-all duration-300 hover:border-white hover:shadow-white_color">
-          <NumberTickerProjects />
-          <p className="mt-2 text-xl font-semibold uppercase text-zinc-400 md:text-2xl">
-            Projetos entregues
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </Container>
   )
 }
 

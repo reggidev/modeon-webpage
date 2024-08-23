@@ -71,8 +71,8 @@ const NavBar = () => {
                   <div key={link.name} className="items-center gap-4">
                     <SheetClose asChild>
                       <Button
-                        variant="ghost"
-                        className="w-full text-sm font-semibold uppercase tracking-tight hover:bg-lighter_bg/70 hover:text-white"
+                        variant="outline"
+                        className="w-full text-sm font-semibold uppercase tracking-tight hover:bg-terciaria hover:text-black"
                         asChild
                       >
                         <a href={link.href} className="text-right">
@@ -82,6 +82,9 @@ const NavBar = () => {
                     </SheetClose>
                   </div>
                 ))}
+                <button className="inline-flex h-10 animate-shimmer items-center justify-center rounded-md border border-terciaria bg-[linear-gradient(110deg,#000103,45%,#DBFF00,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                  Contato
+                </button>
               </div>
             </SheetContent>
           </Sheet>
