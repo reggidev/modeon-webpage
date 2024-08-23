@@ -33,7 +33,7 @@ const MainTitle = () => {
             />
           </div>
           <div className="ml-6">
-            {/* TOGGLE BUTTON MODE(ON) */}
+            {/* TOGGLE BUTTON MODE(ON) - CSS APART */}
             <div className={`toggle-button ${isOn ? "on" : "off"}`}>
               <div className="slider bg-gradient-to-r from-[#bbe534] to-[#a6cb2c]" />
             </div>

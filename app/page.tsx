@@ -3,6 +3,7 @@ import { Contato } from "./_components/Contato"
 import Footer from "./_components/Footer"
 import MainTitle from "./_components/MainTitle"
 import NavBar from "./_components/NavBar"
+import { ScrollingLogo } from "./_components/ScrollingLogo"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <main>
           <MainTitle />
           <CardServices />
+          <ScrollingLogo />
           <Contato />
         </main>
         <Footer />
