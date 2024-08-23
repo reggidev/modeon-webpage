@@ -9,6 +9,7 @@ import { BiSolidTrafficCone } from "react-icons/bi"
 import { SiPagespeedinsights, SiSimpleanalytics } from "react-icons/si"
 import NumberTickerClient from "./others/number-ticker-clients"
 import NumberTickerProjects from "./others/number-ticker-projects"
+import { AnimatedGradientTitle } from "./others/animated-gradient-title"
 
 const projects = [
   {
@@ -52,7 +53,7 @@ const projects = [
 const CardServices = () => {
   return (
     <div className="flex flex-col items-center justify-center py-10">
-      <h3 className="section-title">Serviços</h3>
+      <AnimatedGradientTitle text="Serviços" />
       <p className="section-description">
         O que oferecemos para sua empresa...
       </p>

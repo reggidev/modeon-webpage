@@ -72,7 +72,7 @@
   }
 
   .section-description {
-    @apply text-center text-[22px] leading-[30px] tracking-tight text-white/80;
+    @apply mt-4 text-center text-[22px] leading-[30px] tracking-tight text-white/80;
   }
 
   .section-heading {

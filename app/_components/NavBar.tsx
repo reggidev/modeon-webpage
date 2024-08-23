@@ -23,7 +23,7 @@ const navLinks = [
 
 const NavBar = () => {
   return (
-    <header className="sticky left-0 top-0 z-50 p-2">
+    <header className="sticky left-0 top-4 z-50 px-2">
       <div className="mx-auto flex max-w-2xl items-center justify-around rounded-full bg-darker_bg py-6 text-white shadow-lg lg:max-w-5xl">
         <div>
           <Image
@@ -36,13 +36,12 @@ const NavBar = () => {
 
         {/* DESKTOP NAVBAR */}
         <div className="hidden lg:flex">
-          <ul className="-ml-3 flex items-center gap-6 text-base font-bold uppercase tracking-tight">
+          <ul className="flex items-center gap-6 text-base font-bold uppercase tracking-tight">
             {navLinks.map((link) => (
               <li key={link.name} className="hover:text-white/60">
                 <a href={link.href}>{link.name}</a>
               </li>
             ))}
-            <li className="flex items-center hover:text-white/60"></li>
           </ul>
         </div>
 

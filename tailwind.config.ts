@@ -97,6 +97,11 @@ const config = {
             opacity: "0",
           },
         },
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
+          },
+        },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
@@ -107,6 +112,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 2s linear infinite",
         meteor: "meteor 5s linear infinite",
+        gradient: "gradient 8s linear infinite",
       },
     },
   },
