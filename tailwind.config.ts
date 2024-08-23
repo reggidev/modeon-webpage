@@ -68,6 +68,9 @@ const config = {
         dark_color: "inset 0 0 20px -4px #000",
         white_color: "inset 0 0 15px -4px #fff",
       },
+      screens: {
+        break_togglebutton: "479px",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

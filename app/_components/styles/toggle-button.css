@@ -1,0 +1,15 @@
+.toggle-button {
+  @apply relative h-[72px] w-[144px] rounded-[36px] bg-[#2c2c2f] transition-colors duration-500 ease-in-out;
+}
+
+.toggle-button.on {
+  @apply bg-[#dbff00];
+}
+
+.slider {
+  @apply absolute left-[5px] top-[5px] h-[62px] w-[62px] rounded-[50%] bg-[#e1e1e1] transition-transform duration-500 ease-in-out;
+}
+
+.toggle-button.on .slider {
+  @apply translate-x-[72px] transform;
+}
