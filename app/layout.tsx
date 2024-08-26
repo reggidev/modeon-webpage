@@ -23,11 +23,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="inset-0 -z-10 h-full w-full items-center overflow-clip [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#DBFF00_100%)]">
           <NavBar />
-          <div className="flex h-full flex-col">
-            <main className="flex-1">{children}</main>
-            <Toaster />
-            <Footer />
-          </div>
+          {children}
+          <Toaster />
+          <Footer />
         </div>
       </body>
     </html>

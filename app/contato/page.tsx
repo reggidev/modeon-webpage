@@ -3,7 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-
+import React, { useRef } from "react"
+import emailjs from "@emailjs/browser"
 import { Button } from "../_components/ui/button"
 import {
   Form,
@@ -40,6 +41,8 @@ const FormSchema = z.object({
 })
 
 export default function InputForm() {
+  const formRef = useRef<HTMLFormElement>(null)
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -52,24 +55,39 @@ export default function InputForm() {
     },
   })
 
-  function onSubmit() {
-    try {
-      toast.success("Formulário enviado com sucesso")
-    } catch (error) {
-      toast.error("Não foi possível enviar seu formulário. Tente novamente")
-    } finally {
-      form.reset()
+  const onSubmit = () => {
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          "service_w6w74c9",
+          "template_d7qetbl",
+          formRef.current,
+          "w8OYY4wVVg6r5pXR2",
+        )
+        .then(
+          () => {
+            toast.success("Formulário enviado com sucesso")
+          },
+          (error) => {
+            toast.error(
+              `Não foi possível enviar seu formulário. Erro: ${error.text}`,
+            )
+          },
+        )
     }
+
+    form.reset()
   }
 
   return (
-    <div className="mx-auto flex min-h-full max-w-5xl items-center justify-center">
+    <div className="mx-auto flex max-w-5xl items-center justify-center pb-20 pt-44">
       <Form {...form}>
         <form
+          ref={formRef}
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-2/3 space-y-6"
+          className="w-[90%] space-y-6 sm:w-2/3"
         >
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <FormField
               control={form.control}
               name="name"
@@ -125,7 +143,7 @@ export default function InputForm() {
                 </FormItem>
               )}
             />
-            <div className="col-span-2">
+            <div className="md:col-span-2">
               <FormField
                 control={form.control}
                 name="message"
@@ -140,7 +158,7 @@ export default function InputForm() {
                 )}
               />
             </div>
-            <div className="col-span-2 items-center px-24 text-center">
+            <div className="items-center text-center md:col-span-2 md:px-10">
               <FormField
                 control={form.control}
                 name="consent"
@@ -164,7 +182,9 @@ export default function InputForm() {
             </div>
           </div>
           <div className="flex w-full items-center justify-center">
-            <Button type="submit">Enviar</Button>
+            <Button type="submit" variant="checkbox">
+              Enviar
+            </Button>
           </div>
         </form>
       </Form>

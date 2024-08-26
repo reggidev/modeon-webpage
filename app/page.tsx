@@ -6,12 +6,12 @@ import Services from "./_components/Services"
 
 export default function Home() {
   return (
-    <>
+    <main>
       <MainTitle />
       <Services />
       <ScrollingLogo />
       <PortfolioSection />
       <ContactCta />
-    </>
+    </main>
   )
 }
