@@ -2,10 +2,13 @@ import { AnimatedGradientTitle } from "./others/animated-gradient-title"
 import Container from "./others/container-animation"
 import { PortfolioCards } from "./others/portfolio-cards"
 
-const Portfolio = () => {
+const PortfolioSection = () => {
   return (
     <Container>
-      <section className="mx-auto flex max-w-5xl flex-col items-center justify-center py-10">
+      <section
+        id="portfolio"
+        className="mx-auto flex max-w-5xl scroll-mt-28 flex-col items-center justify-center py-10"
+      >
         <AnimatedGradientTitle text="Portfolio" />
         <p className="section-description">
           Nossos ultimos trabalhos entregues...
@@ -41,4 +44,4 @@ const Portfolio = () => {
   )
 }
 
-export default Portfolio
+export default PortfolioSection

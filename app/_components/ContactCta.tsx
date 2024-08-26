@@ -1,7 +1,7 @@
 import Meteors from "./magicui/meteors"
 import Container from "./others/container-animation"
 
-export function Contato() {
+export function ContactCta() {
   return (
     <Container>
       <section className="py-10">

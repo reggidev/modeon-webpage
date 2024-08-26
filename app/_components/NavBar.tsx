@@ -9,50 +9,59 @@ import {
   SheetTrigger,
 } from "./ui/sheet"
 import Image from "next/image"
+import Link from "next/link"
 
 const navLinks = [
   {
     name: "serviços",
-    href: "/servicos",
+    href: "#servicos",
   },
   {
     name: "portfolio",
-    href: "/portfolio",
+    href: "#portfolio",
+  },
+  {
+    name: "sobre",
+    href: "#",
   },
 ]
 
 const NavBar = () => {
   return (
-    <header className="sticky left-0 top-4 z-50 px-2">
-      <div className="mx-auto flex max-w-2xl items-center justify-around rounded-full bg-darker_bg py-6 text-white shadow-lg lg:max-w-5xl">
+    <header className="sticky left-0 top-4 z-50 px-4">
+      <div className="mx-auto flex max-w-5xl items-center justify-between rounded-3xl bg-darker_bg px-8 py-4 text-zinc-300">
         <div>
-          <Image
-            src="/ModeON-DBFF00.webp"
-            alt="ModeON Logo"
-            width={150}
-            height={100}
-          />
+          <Link href="/">
+            <Image
+              src="/ModeON-DBFF00.webp"
+              alt="ModeON Logo"
+              width={150}
+              height={100}
+            />
+          </Link>
         </div>
 
         {/* DESKTOP NAVBAR */}
-        <div className="hidden lg:flex">
+        <div className="hidden md:flex">
           <ul className="flex items-center gap-6 text-base font-bold uppercase tracking-tight">
             {navLinks.map((link) => (
-              <li key={link.name} className="hover:text-white/60">
+              <li key={link.name} className="hover:text-terciaria/80">
                 <a href={link.href}>{link.name}</a>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="hidden lg:flex">
-          <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-terciaria bg-[linear-gradient(110deg,#000103,45%,#DBFF00,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-            Contato
-          </button>
+        <div className="hidden md:flex">
+          <Link href="/contato">
+            <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-terciaria bg-[linear-gradient(110deg,#000103,45%,#DBFF00,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+              Contato
+            </button>
+          </Link>
         </div>
 
         {/* MOBILE NAVBAR */}
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -82,9 +91,11 @@ const NavBar = () => {
                     </SheetClose>
                   </div>
                 ))}
-                <button className="inline-flex h-10 animate-shimmer items-center justify-center rounded-md border border-terciaria bg-[linear-gradient(110deg,#000103,45%,#DBFF00,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                  Contato
-                </button>
+                <Link href="/contato">
+                  <button className="inline-flex h-10 animate-shimmer items-center justify-center rounded-md border border-terciaria bg-[linear-gradient(110deg,#000103,45%,#DBFF00,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                    Contato
+                  </button>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
