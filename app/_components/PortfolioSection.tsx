@@ -5,10 +5,7 @@ import { PortfolioCards } from "./others/portfolio-cards"
 const PortfolioSection = () => {
   return (
     <Container>
-      <section
-        id="portfolio"
-        className="mx-auto flex max-w-5xl scroll-mt-28 flex-col items-center justify-center py-10"
-      >
+      <section className="mx-auto flex max-w-5xl flex-col items-center justify-center py-10">
         <AnimatedGradientTitle text="Portfolio" />
         <p className="section-description">
           Nossos ultimos trabalhos entregues...

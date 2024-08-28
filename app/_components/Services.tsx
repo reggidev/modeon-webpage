@@ -60,10 +60,7 @@ const projects = [
 const Services = () => {
   return (
     <Container>
-      <section
-        id="servicos"
-        className="flex scroll-mt-28 flex-col items-center justify-center py-10"
-      >
+      <section className="flex flex-col items-center justify-center py-10">
         <AnimatedGradientTitle text="Serviços" />
         <p className="section-description">
           O que oferecemos para sua empresa...

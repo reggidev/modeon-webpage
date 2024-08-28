@@ -14,11 +14,11 @@ import Link from "next/link"
 const navLinks = [
   {
     name: "serviços",
-    href: "#servicos",
+    href: "/servicos",
   },
   {
     name: "portfolio",
-    href: "#portfolio",
+    href: "/portfolio",
   },
   {
     name: "sobre",
@@ -46,7 +46,7 @@ const NavBar = () => {
           <ul className="flex items-center gap-6 text-base font-bold uppercase tracking-tight">
             {navLinks.map((link) => (
               <li key={link.name} className="hover:text-terciaria/80">
-                <a href={link.href}>{link.name}</a>
+                <Link href={link.href}>{link.name}</Link>
               </li>
             ))}
           </ul>

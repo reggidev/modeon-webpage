@@ -40,7 +40,7 @@ const FormSchema = z.object({
   }),
 })
 
-export default function InputForm() {
+export default function ContatoPage() {
   const formRef = useRef<HTMLFormElement>(null)
 
   const form = useForm<z.infer<typeof FormSchema>>({
