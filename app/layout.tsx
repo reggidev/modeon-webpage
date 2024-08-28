@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <div className="inset-0 -z-10 h-full w-full items-center overflow-clip [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#DBFF00_100%)]">
+        <div className="inset-0 -z-10 h-full w-full items-center overflow-clip [background:radial-gradient(125%_65%_at_50%_10%,#000_40%,#DBFF00_100%)]">
           <NavBar />
           {children}
           <Toaster />
