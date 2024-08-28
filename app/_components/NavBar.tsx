@@ -20,10 +20,6 @@ const navLinks = [
     name: "portfolio",
     href: "/portfolio",
   },
-  {
-    name: "sobre",
-    href: "#",
-  },
 ]
 
 const NavBar = () => {
@@ -85,18 +81,20 @@ const NavBar = () => {
                         className="w-full text-sm font-semibold uppercase tracking-tight hover:bg-terciaria hover:text-black"
                         asChild
                       >
-                        <a href={link.href} className="text-right">
+                        <Link href={link.href} className="text-right">
                           {link.name}
-                        </a>
+                        </Link>
                       </Button>
                     </SheetClose>
                   </div>
                 ))}
-                <Link href="/contato">
-                  <button className="inline-flex h-10 animate-shimmer items-center justify-center rounded-md border border-terciaria bg-[linear-gradient(110deg,#000103,45%,#DBFF00,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                    Contato
-                  </button>
-                </Link>
+                <SheetClose asChild>
+                  <Link href="/contato">
+                    <button className="inline-flex h-10 w-full animate-shimmer items-center justify-center rounded-md border border-terciaria bg-[linear-gradient(110deg,#000103,45%,#DBFF00,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                      Contato
+                    </button>
+                  </Link>
+                </SheetClose>
               </div>
             </SheetContent>
           </Sheet>
