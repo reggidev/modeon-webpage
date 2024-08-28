@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const Footer = () => {
   return (
@@ -14,13 +15,21 @@ const Footer = () => {
             />
           </div>
           <div className="mt-4 flex items-center justify-center text-base font-semibold text-zinc-200">
-            <a className="px-4">Serviços</a>
-            <a className="border-l border-solid border-zinc-400 px-4">
+            <a href="#servicos" className="px-4">
+              Serviços
+            </a>
+            <a
+              href="#portfolio"
+              className="border-l border-solid border-zinc-400 px-4"
+            >
               Portfolio
             </a>
-            <a className="border-l border-solid border-zinc-400 px-4">
+            <Link
+              href="/contato"
+              className="border-l border-solid border-zinc-400 px-4"
+            >
               Contato
-            </a>
+            </Link>
           </div>
         </div>
       </footer>
