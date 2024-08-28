@@ -10,7 +10,7 @@ const Footer = () => {
             <Image
               src="/ModeON-DBFF00.webp"
               alt="ModeON Logo"
-              width={350}
+              width={250}
               height={100}
             />
           </div>
