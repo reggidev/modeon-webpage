@@ -1,11 +1,8 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
 import React, { useRef } from "react"
-import emailjs from "@emailjs/browser"
-import { Button } from "../_components/ui/button"
+import { useForm } from "react-hook-form"
+import Container from "../_components/others/container-animation"
 import {
   Form,
   FormControl,
@@ -14,10 +11,15 @@ import {
   FormLabel,
   FormMessage,
 } from "../_components/ui/form"
+import { Button } from "../_components/ui/button"
 import { Input } from "../_components/ui/input"
 import { Textarea } from "../_components/ui/textarea"
 import { Checkbox } from "../_components/ui/checkbox"
 import { toast } from "sonner"
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+import emailjs from "@emailjs/browser"
+import { insertMaskInPhone } from "./validPhone"
 
 const FormSchema = z.object({
   name: z.string().min(4, {
@@ -29,7 +31,7 @@ const FormSchema = z.object({
   email: z.string().email({
     message: "Por favor, insira um e-mail válido",
   }),
-  phone: z.string().min(10, {
+  phone: z.string().min(8, {
     message: "Por favor, insira um telefone válido",
   }),
   message: z.string().min(10, {
@@ -80,114 +82,136 @@ export default function ContatoPage() {
   }
 
   return (
-    <div className="mx-auto flex max-w-5xl items-center justify-center pb-20 pt-44">
-      <Form {...form}>
-        <form
-          ref={formRef}
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="w-[90%] space-y-6 sm:w-2/3"
-        >
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Nome</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Digite seu nome completo" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="company"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Empresa</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Digite o nome da sua empresa"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>E-mail</FormLabel>
-                  <FormControl>
-                    <Input placeholder="agencia@modeon.com.br" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Telefone</FormLabel>
-                  <FormControl>
-                    <Input placeholder="(xx) xxxxx-xxxx" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <div className="md:col-span-2">
+    <Container>
+      <div className="mx-auto flex max-w-5xl items-center justify-center pb-20 pt-44">
+        <Form {...form}>
+          <form
+            ref={formRef}
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="w-[90%] space-y-6 sm:w-2/3"
+          >
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <FormField
                 control={form.control}
-                name="message"
+                name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Mensagem</FormLabel>
+                    <FormLabel>Nome</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Digite sua mensagem" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="items-center text-center md:col-span-2 md:px-10">
-              <FormField
-                control={form.control}
-                name="consent"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Checkbox
-                        checked={field.value}
-                        onCheckedChange={field.onChange}
+                      <Input
+                        type="text"
+                        placeholder="Digite seu nome completo"
+                        {...field}
                       />
                     </FormControl>
-                    <FormLabel className="ml-1">
-                      Ao selecionar esta caixa e enviar seus dados, você nos
-                      autoriza a te enviar e-mails. Você pode cancelar a
-                      qualquer momento.
-                    </FormLabel>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+              <FormField
+                control={form.control}
+                name="company"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Empresa</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="text"
+                        placeholder="Digite o nome da sua empresa"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>E-mail</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="email"
+                        placeholder="agencia@modeon.com.br"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Telefone</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="tel"
+                        placeholder="(xx) xxxxx-xxxx"
+                        maxLength={15}
+                        {...field}
+                        onChange={(e) => {
+                          field.onChange(insertMaskInPhone(e.target.value))
+                        }}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <div className="md:col-span-2">
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Mensagem</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Digite sua mensagem"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="items-center text-center md:col-span-2 md:px-10">
+                <FormField
+                  control={form.control}
+                  name="consent"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                        />
+                      </FormControl>
+                      <FormLabel className="ml-1">
+                        Ao selecionar esta caixa e enviar seus dados, você nos
+                        autoriza a te enviar e-mails. Você pode cancelar a
+                        qualquer momento.
+                      </FormLabel>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
             </div>
-          </div>
-          <div className="flex w-full items-center justify-center">
-            <Button type="submit" variant="checkbox">
-              Enviar
-            </Button>
-          </div>
-        </form>
-      </Form>
-    </div>
+            <div className="flex w-full items-center justify-center">
+              <Button type="submit" variant="checkbox">
+                Enviar
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </div>
+    </Container>
   )
 }
