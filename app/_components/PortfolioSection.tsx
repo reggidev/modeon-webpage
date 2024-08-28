@@ -1,5 +1,5 @@
-import { AnimatedGradientTitle } from "./others/animated-gradient-title"
 import Container from "./others/container-animation"
+import { AnimatedGradientTitle } from "./others/animated-gradient-title"
 import { PortfolioCards } from "./others/portfolio-cards"
 
 const PortfolioSection = () => {
@@ -10,7 +10,7 @@ const PortfolioSection = () => {
         <p className="section-description">
           Nossos ultimos trabalhos entregues...
         </p>
-        <div className="mx-2 flex flex-wrap items-center justify-center gap-x-8">
+        <div className="mx-2 flex flex-row flex-wrap items-center justify-center gap-x-8">
           <PortfolioCards
             title="Projeto 01"
             description="Breve descrição do projeto 01"
