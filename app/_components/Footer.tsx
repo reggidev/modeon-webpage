@@ -8,10 +8,12 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-center gap-y-4 rounded-t-[50px] bg-black py-16 text-white">
           <div>
             <Image
-              src="/ModeON-DBFF00.webp"
+              src="/modeon_logo_verde.webp"
               alt="ModeON Logo"
               width={250}
               height={100}
+              className="h-auto w-auto"
+              priority
             />
           </div>
           <div className="mt-4 flex items-center justify-center text-base font-semibold text-zinc-200">

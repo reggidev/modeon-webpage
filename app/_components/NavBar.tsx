@@ -29,10 +29,12 @@ const NavBar = () => {
         <div>
           <Link href="/">
             <Image
-              src="/ModeON-DBFF00.webp"
+              src="/modeon_logo_verde.webp"
               alt="ModeON Logo"
               width={150}
               height={100}
+              className="h-auto w-auto"
+              priority
             />
           </Link>
         </div>
