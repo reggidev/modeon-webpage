@@ -2,7 +2,7 @@ import Link from "next/link"
 import Meteors from "./magicui/meteors"
 import Container from "./others/container-animation"
 
-export function ContactCta() {
+const ContactCta = () => {
   return (
     <Container>
       <section className="py-10">
@@ -26,3 +26,5 @@ export function ContactCta() {
     </Container>
   )
 }
+
+export default ContactCta

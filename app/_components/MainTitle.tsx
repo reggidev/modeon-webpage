@@ -1,15 +1,15 @@
 "use client"
+import { useEffect, useState } from "react"
 import WordPullUp from "./magicui/word-pull-up"
 import GradualSpacing from "./magicui/gradual-spacing"
-import { useEffect, useState } from "react"
-import "./styles/toggle-button.css"
 import { RiArrowDownSLine } from "react-icons/ri"
+import "./styles/toggle-button.css"
 
 const MainTitle = () => {
   const [isOn, setIsOn] = useState(false)
 
+  // Animação "ON" para quando a página carrega
   useEffect(() => {
-    // Animação para quando a página carrega
     setTimeout(() => {
       setIsOn(true)
     }, 1200) // Atraso da animação

@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
+import { Toaster } from "sonner"
 import Footer from "./_components/Footer"
 import NavBar from "./_components/NavBar"
-import { Toaster } from "sonner"
+import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="inset-0 -z-10 h-full w-full items-center overflow-clip [background:radial-gradient(125%_65%_at_50%_10%,#000_40%,#DBFF00_100%)]">
           <NavBar />
-          {children}
+          <main>{children}</main>
           <Toaster />
           <Footer />
         </div>

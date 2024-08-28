@@ -1,6 +1,6 @@
 import { VelocityScroll } from "./magicui/scroll-based-velocity"
 
-export function ScrollingLogo() {
+const ScrollingLogo = () => {
   return (
     <section className="py-4">
       <VelocityScroll
@@ -11,3 +11,5 @@ export function ScrollingLogo() {
     </section>
   )
 }
+
+export default ScrollingLogo
