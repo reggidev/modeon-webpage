@@ -68,6 +68,7 @@ const NavBar = () => {
                 size="icon"
                 className="bg-terciaria text-black hover:bg-terciaria/50"
               >
+                <span className="sr-only">Abrir menu de navegação</span>
                 <MenuIcon size={18} />
               </Button>
             </SheetTrigger>

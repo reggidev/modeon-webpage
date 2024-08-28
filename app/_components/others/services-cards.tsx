@@ -17,7 +17,9 @@ const ServicesCards = ({
         <Icon />
       </div>
       <div>
-        <h4 className="mt-4 font-bold tracking-wide text-zinc-100">{title}</h4>
+        <span className="mt-4 font-bold tracking-wide text-zinc-100">
+          {title}
+        </span>
         <p className="mt-2 text-sm leading-relaxed tracking-wide text-zinc-400">
           {description}
         </p>
