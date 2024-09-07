@@ -8,9 +8,9 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "ModeON | Agência de Marketing Digital",
+  title: "Agência de Marketing Digital para ISP's - Agencia Mode On",
   description:
-    "Uma agência de marketing, performance e conteúdo para Provedores de Internet que buscam se destacar no mercado, gerar valor, vender mais e serem lembrados.",
+    "Uma agência de marketing, performance e conteúdo para Provedores de Internet que buscam se destacar no mercado, gerar valor, vender mais e serem lembrados em primeiro lugar.",
 }
 
 export default function RootLayout({
