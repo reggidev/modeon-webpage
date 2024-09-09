@@ -8,7 +8,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Agência de Marketing Digital para ISP's - Agencia Mode On",
+  title: "Agencia Mode On - Agência de Marketing Digital para ISP's",
   description:
     "Uma agência de marketing, performance e conteúdo para Provedores de Internet que buscam se destacar no mercado, gerar valor, vender mais e serem lembrados em primeiro lugar.",
 }
