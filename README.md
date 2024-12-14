@@ -1,8 +1,7 @@
 ![modeon-website-presentation](https://github.com/user-attachments/assets/e3b3d894-4de0-422b-906d-c4b213a2bc70)
 # ModeON 🌐
 
-Uma presença digital única e envolvente
-A landing page foi desenvolvida para destacar a identidade visual da [Nome da Empresa], com animações dinâmicas e design alinhado à marca, resultando em uma experiência moderna e cativante.
+Uma presença digital única e envolvente. A landing page foi desenvolvida para destacar a identidade visual da [Nome da Empresa], com animações dinâmicas e design alinhado à marca, resultando em uma experiência moderna e cativante.
 
 Visite agora: [ModeON](https://modeon-webpage.vercel.app/)
 
