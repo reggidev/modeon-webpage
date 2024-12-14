@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![modeon-website-presentation](https://github.com/user-attachments/assets/e3b3d894-4de0-422b-906d-c4b213a2bc70)
+# ModeON 🌐
 
-## Getting Started
+Uma presença digital única e envolvente
+A landing page foi desenvolvida para destacar a identidade visual da [Nome da Empresa], com animações dinâmicas e design alinhado à marca, resultando em uma experiência moderna e cativante.
 
-First, run the development server:
+Visite agora: [ModeON](https://modeon-webpage.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Como funciona
+Stack: NextJS + TypeScript + Framer Motion + Tailwind CSS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O site combina uma estrutura simples e eficiente, com uma página inicial atrativa e uma área de contato funcional. As animações foram cuidadosamente aplicadas para criar uma experiência imersiva, destacando a proposta da empresa de maneira única.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Características
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Design moderno e alinhado à identidade visual
+- Animações dinâmicas com Framer Motion
+- Layout responsivo para diferentes dispositivos
+- Foco na comunicação direta com o público
+- Implementação leve e otimizada
